@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://bh2le11r3jna4"]
+
+[ext_resource type="Texture2D" uid="uid://cl4cr18e42tpk" path="res://assets/background.png" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://uxov3jgx82yv" path="res://assets/front.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b2urohdco3g5g" path="res://board/board.tscn" id="2_5vw27"]
+[ext_resource type="Texture2D" uid="uid://qufqvtunq55o" path="res://assets/bar.png" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://bbyp7dup3jptt" path="res://assets/curtain.png" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://b6m24p5455ten" path="res://character/character.tscn" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://j6uu6cnnrn65" path="res://assets/texture.png" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://wnncab4cdnx2" path="res://throw/throw.tscn" id="7_272bh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(573, 326)
+scale = Vector2(0.599999, 0.605555)
+texture = ExtResource("1_0xm2m")
+
+[node name="Character" parent="." instance=ExtResource("3_lquwl")]
+unique_name_in_owner = true
+position = Vector2(380, 250)
+
+[node name="Bar" type="Sprite2D" parent="."]
+position = Vector2(573.321, 325.5)
+scale = Vector2(0.598624, 0.60463)
+texture = ExtResource("3_272bh")
+
+[node name="Front" type="Sprite2D" parent="."]
+position = Vector2(576, 325.5)
+scale = Vector2(0.598623, 0.60463)
+texture = ExtResource("1_ig7tw")
+
+[node name="Board" parent="." instance=ExtResource("2_5vw27")]
+visible = false
+position = Vector2(761, 179)
+
+[node name="Curtain" type="Sprite2D" parent="."]
+position = Vector2(574.5, 326)
+scale = Vector2(0.601563, 0.603704)
+texture = ExtResource("3_h2yge")
+
+[node name="Throw" parent="." instance=ExtResource("7_272bh")]
+
+[node name="TextureLayer" type="Sprite2D" parent="."]
+position = Vector2(574, 327)
+scale = Vector2(0.601042, 0.601851)
+texture = ExtResource("4_1bvp3")
