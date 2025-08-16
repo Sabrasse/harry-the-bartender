@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b16srk83qft0l"]
+
+[ext_resource type="Script" uid="uid://dqg3cbpryncrr" path="res://items/item.gd" id="1_3q38j"]
+[ext_resource type="Texture2D" uid="uid://dxxilfn3w1ty7" path="res://assets/bottle.png" id="2_3q38j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykn3o"]
+size = Vector2(50, 105)
+
+[node name="Bottle" type="Area2D" groups=["bottle"]]
+script = ExtResource("1_3q38j")
+throw_speed = 400
+rotation_angle = 2.0
+item_damage = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_3q38j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_ykn3o")

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chwjcjbercl1k" path="res://assets/character.png" id="1_glpr6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjt0s"]
-size = Vector2(9.65092, 45.5357)
+size = Vector2(6.16016, 45.5357)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugqs2"]
 bg_color = Color(0, 0, 0, 1)
@@ -30,7 +30,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_glpr6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -10.5)
+position = Vector2(-11, -10.5)
 scale = Vector2(19.48, 3.36)
 shape = SubResource("RectangleShape2D_pjt0s")
 
@@ -41,9 +41,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -97.0
+offset_left = -71.0
 offset_top = -88.0
-offset_right = 92.0
+offset_right = 49.0
 offset_bottom = 65.0
 grow_horizontal = 2
 grow_vertical = 2

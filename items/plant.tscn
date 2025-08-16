@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh1rqwvagjcqb"]
+
+[ext_resource type="Script" uid="uid://dqg3cbpryncrr" path="res://items/item.gd" id="1_brrba"]
+[ext_resource type="Texture2D" uid="uid://bk332struh3sn" path="res://assets/plant.png" id="2_brrba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykn3o"]
+size = Vector2(114, 133)
+
+[node name="Plant" type="Area2D" groups=["plant"]]
+script = ExtResource("1_brrba")
+rotation_angle = 5.0
+item_damage = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_brrba")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1.5)
+shape = SubResource("RectangleShape2D_ykn3o")
