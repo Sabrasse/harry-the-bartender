@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var sprite2D = $Sprite2D
+
 var health := 100
 var speed := 300
 var direction := Vector2(0,0)
@@ -11,7 +13,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	var viewport_size = get_viewport_rect().size
-	var sprite2D = get_node("Sprite2D")
 	
 	position.x = wrapf(position.x, 0, viewport_size.x)
 	
