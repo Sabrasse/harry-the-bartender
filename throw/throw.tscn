@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://wnncab4cdnx2"]
+[gd_scene format=3 uid="uid://wnncab4cdnx2"]
 
 [ext_resource type="Script" uid="uid://c24lyt8ivkvuv" path="res://throw/throw.gd" id="1_5al3x"]
 
-[node name="Throw" type="Node2D"]
+[node name="Throw" type="Node2D" unique_id=885960186]
 script = ExtResource("1_5al3x")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=607262090]
 wait_time = 3.0
 autostart = true

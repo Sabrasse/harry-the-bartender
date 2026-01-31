@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5te8bnsn5vri"]
+
+[ext_resource type="Script" uid="uid://c76a41vjgrpej" path="res://spawn/spawn.gd" id="1_tax6h"]
+
+[node name="Spawn" type="Node2D"]
+script = ExtResource("1_tax6h")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0

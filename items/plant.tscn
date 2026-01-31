@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykn3o"]
 size = Vector2(114, 133)
 
-[node name="Plant" type="Area2D" groups=["plant"]]
+[node name="Plant" type="Area2D" groups=["plant", "throwable"]]
 script = ExtResource("1_brrba")
 rotation_angle = 5.0
 item_damage = 20

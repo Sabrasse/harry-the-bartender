@@ -1,16 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2urohdco3g5g"]
+[gd_scene format=3 uid="uid://b2urohdco3g5g"]
 
 [ext_resource type="Texture2D" uid="uid://djax4efxjjbks" path="res://assets/board.png" id="1_5c38k"]
+[ext_resource type="Script" uid="uid://86d5cljiwhyf" path="res://board/board.gd" id="1_vj8kq"]
+[ext_resource type="Theme" uid="uid://ckslny2x6xog8" path="res://UI/main_theme.tres" id="2_k4dee"]
 
-[node name="Board" type="Node2D"]
+[node name="Board" type="Node2D" unique_id=1146344935]
 scale = Vector2(0.862352, 0.862352)
+script = ExtResource("1_vj8kq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=588501338]
 position = Vector2(-3.47885, 30.15)
 scale = Vector2(0.533138, 0.533138)
 texture = ExtResource("1_5c38k")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=765098522]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -24,11 +27,37 @@ offset_bottom = 149.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="Control" unique_id=2038181762]
 layout_mode = 0
-offset_left = 69.0
-offset_top = 135.0
-offset_right = 240.0
-offset_bottom = 177.0
+offset_left = 24.5169
+offset_top = 30.0592
+offset_right = 242.517
+offset_bottom = 91.0592
 theme_override_font_sizes/font_size = 20
-text = "Placeholder"
+text = "Harry the Bartender"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+
+[node name="Label2" type="Label" parent="Control" unique_id=232688814]
+layout_mode = 0
+offset_left = 61.6247
+offset_top = 98.4768
+offset_right = 209.625
+offset_bottom = 159.477
+theme_override_font_sizes/font_size = 16
+text = "Help Harry survive his shift."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+
+[node name="StartButton" type="Button" parent="Control" unique_id=51776693]
+layout_mode = 0
+offset_left = 72.0613
+offset_top = 190.087
+offset_right = 202.061
+offset_bottom = 238.087
+theme = ExtResource("2_k4dee")
+text = "Start"

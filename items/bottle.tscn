@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykn3o"]
 size = Vector2(50, 105)
 
-[node name="Bottle" type="Area2D" groups=["bottle"]]
+[node name="Bottle" type="Area2D" groups=["bottle", "throwable"]]
 script = ExtResource("1_3q38j")
 throw_speed = 400
 rotation_angle = 2.0

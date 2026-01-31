@@ -1,20 +1,13 @@
 extends Node2D
 
-@onready var timer = $Timer
-
-var items := [
-	preload("res://items/glass.tscn"),
-	preload("res://items/bottle.tscn"),
-	preload("res://items/plant.tscn"),
-	preload("res://items/stool.tscn")
-]
-
-var throws := []
+@onready var timer: Timer = $Timer
+@export var items: Array[PackedScene] = []
 
 var item: Area2D
 var velocity := Vector2(0,0)
 
 func _ready() -> void:
+	print(items)
 	timer.timeout.connect(_on_timeout)
 
 func _process(delta: float) -> void:
@@ -23,17 +16,18 @@ func _process(delta: float) -> void:
 		item.rotate(item.rotation_angle * delta)
 		
 func _on_timeout():
-	spawn_new_item(items)
+	_spawn_new_item()
 
-func spawn_new_item(scenes: Array):
-	var random_scene = scenes.pick_random()
-	item = random_scene.instantiate()
+func _spawn_new_item():
+	# Refacto here, not sure about spawning items in the throw scope
+	print(items)
+	item = items.pick_random().instantiate()
 	var random_axis_x := randi_range(0, 1100)
 	add_child(item)
 	item.position = Vector2(random_axis_x,600)
-	throw_item_to_character(item)
+	_throw_item_to_character(item)
 	
-func throw_item_to_character(item):        
+func _throw_item_to_character(item):        
 	var direction := Vector2(0,0)
 	var target_pos = %Character.position
 	direction = (target_pos - item.position).normalized()

@@ -1,45 +1,41 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh2le11r3jna4"]
+[gd_scene load_steps=14 format=3 uid="uid://bh2le11r3jna4"]
 
-[ext_resource type="Texture2D" uid="uid://cl4cr18e42tpk" path="res://assets/background.png" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://uxov3jgx82yv" path="res://assets/front.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://cl4cr18e42tpk" path="res://assets/background.png" id="1_dg77c"]
+[ext_resource type="Script" uid="uid://chs1krhai25bt" path="res://game.gd" id="1_ycdy4"]
 [ext_resource type="PackedScene" uid="uid://b2urohdco3g5g" path="res://board/board.tscn" id="2_5vw27"]
-[ext_resource type="Texture2D" uid="uid://qufqvtunq55o" path="res://assets/bar.png" id="3_272bh"]
-[ext_resource type="Texture2D" uid="uid://bbyp7dup3jptt" path="res://assets/curtain.png" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d3htfr2m5s4fv" path="res://environment/bar.tscn" id="3_dg77c"]
 [ext_resource type="PackedScene" uid="uid://b6m24p5455ten" path="res://character/character.tscn" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://j6uu6cnnrn65" path="res://assets/texture.png" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://wnncab4cdnx2" path="res://throw/throw.tscn" id="7_272bh"]
+[ext_resource type="Script" uid="uid://86d5cljiwhyf" path="res://board/board.gd" id="7_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://b16srk83qft0l" path="res://items/bottle.tscn" id="8_dg77c"]
+[ext_resource type="PackedScene" uid="uid://dflxwbnw7p7k" path="res://items/glass.tscn" id="9_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://bh1rqwvagjcqb" path="res://items/plant.tscn" id="10_w48qg"]
+[ext_resource type="PackedScene" uid="uid://dl5i0qxqusqmo" path="res://items/stool.tscn" id="11_vivmo"]
+[ext_resource type="PackedScene" uid="uid://c5te8bnsn5vri" path="res://spawn/spawn.tscn" id="13_w48qg"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Start" type="Node2D"]
+script = ExtResource("1_ycdy4")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(573, 326)
 scale = Vector2(0.599999, 0.605555)
-texture = ExtResource("1_0xm2m")
+texture = ExtResource("1_dg77c")
 
 [node name="Character" parent="." instance=ExtResource("3_lquwl")]
 unique_name_in_owner = true
 position = Vector2(380, 250)
 
-[node name="Bar" type="Sprite2D" parent="."]
-position = Vector2(573.321, 325.5)
-scale = Vector2(0.598624, 0.60463)
-texture = ExtResource("3_272bh")
-
-[node name="Front" type="Sprite2D" parent="."]
-position = Vector2(576, 325.5)
-scale = Vector2(0.598623, 0.60463)
-texture = ExtResource("1_ig7tw")
+[node name="Bar" parent="." instance=ExtResource("3_dg77c")]
 
 [node name="Board" parent="." instance=ExtResource("2_5vw27")]
-visible = false
 position = Vector2(761, 179)
-
-[node name="Curtain" type="Sprite2D" parent="."]
-position = Vector2(574.5, 326)
-scale = Vector2(0.601563, 0.603704)
-texture = ExtResource("3_h2yge")
+script = ExtResource("7_ycdy4")
 
 [node name="Throw" parent="." instance=ExtResource("7_272bh")]
+items = Array[PackedScene]([ExtResource("8_dg77c"), ExtResource("9_ycdy4"), ExtResource("10_w48qg"), ExtResource("11_vivmo")])
+
+[node name="Spawn" parent="." instance=ExtResource("13_w48qg")]
 
 [node name="TextureLayer" type="Sprite2D" parent="."]
 position = Vector2(574, 327)
