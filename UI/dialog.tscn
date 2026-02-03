@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://xejbwoglwac0"]
 
 [ext_resource type="Theme" uid="uid://ckslny2x6xog8" path="res://UI/main_theme.tres" id="1_f8kg0"]
+[ext_resource type="Script" uid="uid://bh460dh008xk2" path="res://UI/dialog.gd" id="1_mewqi"]
 
 [node name="Dialog" type="Control" unique_id=387033548]
 layout_mode = 3
@@ -8,22 +9,24 @@ anchor_right = 0.347
 anchor_bottom = 0.37100002
 offset_right = -399.74402
 offset_bottom = -240.40802
+script = ExtResource("1_mewqi")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1199987033]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 451.0
-offset_top = 117.0
-offset_right = 854.0
-offset_bottom = 217.0
+offset_top = 101.0
+offset_right = 830.0
+offset_bottom = 201.0
 theme = ExtResource("1_f8kg0")
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
 [node name="Button" type="Button" parent="." unique_id=178718199]
 layout_mode = 0
-offset_left = 801.0
-offset_top = 184.0
-offset_right = 830.0
-offset_bottom = 212.0
-text = "A"
+offset_left = 742.0
+offset_top = 179.0
+offset_right = 817.0
+offset_bottom = 223.0
+theme = ExtResource("1_f8kg0")
+text = "Next"
